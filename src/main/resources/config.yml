@@ -1,0 +1,49 @@
+# ==============================================================================
+#                      ItemShop - Configuration File
+# Modern PaperMC Plugin with Adventure MiniMessage Formatting
+# ==============================================================================
+
+# Formatting prefix prepended to system messages
+prefix: "<gradient:#38bdf8:#818cf8><b>[ItemShop]</b></gradient> "
+
+# General settings
+settings:
+  # Enable sound feedback on transactions
+  play-sounds: true
+  # Log transactions to server console
+  log-transactions: true
+  # Maximum amount a player can purchase in a single /buy command
+  max-buy-amount: 2304 # 36 stacks (full inventory)
+
+# Message templates (Adventure MiniMessage tags supported: <green>, <red>, <gold>, <gradient:...>, etc.)
+messages:
+  no-permission: "<red>You do not have permission to execute this command.</red>"
+  player-only: "<red>This command can only be executed by in-game players.</red>"
+  economy-error: "<red>Economy transaction failed. Please contact an administrator.</red>"
+  item-not-found: "<red>Unknown item: <yellow><item></yellow>. Please verify spelling.</red>"
+  
+  # Buy messages
+  buy-disabled: "<red>The item <gold><item></gold> cannot be purchased from the shop.</red>"
+  buy-insufficient-funds: "<red>Insufficient balance! Need <gold><cost></gold>, but you only have <yellow><balance></yellow>.</red>"
+  buy-inventory-full: "<red>Not enough inventory space! Free up at least <yellow><slots_needed></yellow> slot(s).</red>"
+  buy-success: "<green>Successfully bought <white><amount>x <item></white> for <gold><cost></gold>! New balance: <yellow><balance></yellow></green>"
+  
+  # Sell messages
+  sell-disabled: "<red>The item <gold><item></gold> cannot be sold to the shop.</red>"
+  sell-no-items: "<red>You do not have any <yellow><item></yellow> in your inventory to sell.</red>"
+  sell-empty-hand: "<red>You must be holding an item in your main hand to use <yellow>/sell hand</yellow>.</red>"
+  sell-success: "<green>Successfully sold <white><amount>x <item></white> for <gold><earned></gold>! New balance: <yellow><balance></yellow></green>"
+  sell-all-summary: "<green>Sold <white><total_items> items</white> across <white><types_count> types</white> for a total of <gold><total_earned></gold>!</green>"
+  sell-all-none: "<yellow>You have no sellable items in your inventory.</yellow>"
+
+  # Price messages
+  price-header: "<gradient:#38bdf8:#818cf8><b>=========== Item Price: <item> ===========</b></gradient>"
+  price-buy: "<gray>Buy Price (1x): <gold><buy_one></gold> <dark_gray>|</dark_gray> (64x): <gold><buy_stack></gold></gray>"
+  price-sell: "<gray>Sell Price (1x): <green><sell_one></green> <dark_gray>|</dark_gray> (64x): <green><sell_stack></green></gray>"
+  price-buy-disabled: "<gray>Buy Price: <red>Not for sale</red></gray>"
+  price-sell-disabled: "<gray>Sell Price: <red>Cannot be sold</red></gray>"
+
+  # Admin messages
+  admin-setbuy-success: "<green>Set buy price of <white><item></white> to <gold><price></gold> (Saved to prices.yml).</green>"
+  admin-setsell-success: "<green>Set sell price of <white><item></white> to <green><price></green> (Saved to prices.yml).</green>"
+  admin-reload-success: "<green>Configuration and prices successfully reloaded! (<white><count></white> items indexed).</green>"

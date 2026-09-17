@@ -1,0 +1,39 @@
+name: ItemShop
+version: '${project.version}'
+main: com.mineplugin.itemshop.ItemShopPlugin
+api-version: '1.20'
+description: Lightweight, production-ready Item Shop plugin with Vault economy.
+author: Senior PaperMC Developer
+depend: [Vault]
+
+commands:
+  buy:
+    description: Purchase items from the server shop
+    usage: /buy <item> [amount]
+    permission: itemshop.buy
+  sell:
+    description: Sell items from your inventory to the server
+    usage: /sell <item|hand|all> [amount]
+    permission: itemshop.sell
+  price:
+    description: Check the buy and sell price of an item or held item
+    usage: /price [item|hand]
+    permission: itemshop.price
+  shop:
+    description: Admin management command for ItemShop
+    usage: /shop <setbuy|setsell|reload> [price]
+    permission: itemshop.admin
+
+permissions:
+  itemshop.buy:
+    description: Allows players to buy items with /buy
+    default: true
+  itemshop.sell:
+    description: Allows players to sell items with /sell
+    default: true
+  itemshop.price:
+    description: Allows players to check item prices with /price
+    default: true
+  itemshop.admin:
+    description: Allows administrators to configure prices and reload configs
+    default: op
